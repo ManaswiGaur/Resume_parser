@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bulk Resume Uploader</title>
+</head>
+<body>
+  <h2>Upload Multiple Resumes</h2>
+  <form id="uploadForm">
+    <input type="file" id="resumeFiles" name="files" multiple accept=".pdf,.docx"><br><br>
+    <label>Output format:</label>
+    <select id="format">
+      <option value="csv">CSV</option>
+      <option value="json">JSON</option>
+    </select><br><br>
+    <button type="submit">Upload</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const files = document.getElementById('resumeFiles').files;
+      const format = document.getElementById('format').value;
+      const formData = new FormData();
+
+      for (const file of files) {
+        formData.append('files', file);
+      }
+
+      const response = await fetch(`http://127.0.0.1:8000/upload-resumes/?format=${format}`, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        const blob = await response.blob();
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `parsed_output.${format}`;
+        a.click();
+      } else {
+        alert('Upload failed!');
+      }
+    });
+  </script>
+</body>
+</html>

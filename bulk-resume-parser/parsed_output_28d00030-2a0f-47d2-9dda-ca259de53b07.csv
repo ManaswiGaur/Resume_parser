@@ -1,0 +1,5 @@
+error,details,filename
+Failed to parse Sreekar SRS.pdf,[E053] Could not read config file from C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyresparser\config.cfg,Sreekar SRS.pdf
+Failed to parse Saikumari Naidu.pdf,[E053] Could not read config file from C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyresparser\config.cfg,Saikumari Naidu.pdf
+Failed to parse Rahul Kumar Singh.pdf,[E053] Could not read config file from C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyresparser\config.cfg,Rahul Kumar Singh.pdf
+Failed to parse Venu Sankoju.pdf,[E053] Could not read config file from C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyresparser\config.cfg,Venu Sankoju.pdf
